@@ -1,16 +1,32 @@
+from decks import Deck
 from cards import Card
 
-
 def main():
-    testCard1 = Card()
-    testCard2 = Card("Two", "Clubs")
-    testCard3 = Card("Ace", "Clubs")
+    testDeck = Deck()
 
-    print(testCard1)
-    
-    print(testCard1 == testCard2)
-    print(testCard1 == testCard3)
-    print(testCard2 == 7)
+    print(testDeck)
+    print("")
+    testDeck.deckShuffle()
+    print(testDeck)
+    print("")
+
+    testCard1 = testDeck.draw()
+    testCard2 = testDeck.draw()
+    testCard3 = testDeck.draw()
+
+    testCard4 = Card("Two", "Blue")
+
+    print(testDeck.outPile)
+    print("")
+
+    testDeck.discard(testCard1)
+    testDeck.discard(testCard2)
+    testDeck.discard(testCard3)
+    testDeck.discard(testCard4)
+
+    print(testDeck.outPile)
+    print("")
+    print(testDeck.discardPile)
 
 
 if __name__ == "__main__":
